@@ -1,0 +1,47 @@
+version: "3"
+services:
+  fwe-finance-tracker-api:
+    image: node:12
+    container_name: fwe-finance-tracker-api
+    volumes:
+      - ./api:/api/:cached
+    working_dir: /api
+    environment:
+      - API_PORT=8080
+      - API_HOST=http://fwe-finance-tracker-api
+      - DBDATABASE=finance-tracker-db
+      - DBHOST=fwe-finance-tracker-mysql
+      - DBPASSWORD=123456789
+      - DBPORT=3306
+      - DBUSER=finance-tracker-user
+      - NODE_ENV=local
+    command: ./run.sh
+    ports:
+      - "8080:8080"
+    depends_on:
+      - fwe-finance-tracker-mysql
+
+  fwe-finance-tracker-mysql:
+    image: mysql:5.7
+    container_name: fwe-finance-tracker-mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456789
+      - MYSQL_DATABASE=finance-tracker-db
+      - MYSQL_USER=finance-tracker-user
+      - MYSQL_PASSWORD=123456789
+    ports:
+      - "3306:3306"
+
+  fwe-finance-tracker-app:
+    image: node:12
+    container_name: fwe-finance-tracker-app
+    command: npm run start
+    volumes:
+      - "./app:/var/app"
+    working_dir: /var/app
+    ports:
+      - "3000:3000"

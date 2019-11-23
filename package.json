@@ -1,0 +1,26 @@
+{
+  "name": "fwe-ws19-20-example-project---finance-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@testing-library/cypress": "^5.0.2",
+    "@types/node": "^12.12.11",
+    "cypress": "^3.6.1",
+    "morgan": "^1.9.1",
+    "react-select": "^3.0.8",
+    "test-data-bot": "^0.8.0",
+    "typeorm": "^0.2.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.fbi.h-da.de:fbi1483/fwe-ws19-20-example-project---finance-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
