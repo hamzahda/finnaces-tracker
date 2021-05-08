@@ -10,7 +10,7 @@
     "morgan": "^1.9.1",
     "react-select": "^3.0.8",
     "test-data-bot": "^0.8.0",
-    "typeorm": "^0.2.20"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {},
   "scripts": {
