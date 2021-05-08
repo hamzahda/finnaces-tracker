@@ -39,6 +39,6 @@
     "morgan": "^1.9.1",
     "mysql2": "^1.7.0",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.20"
+    "typeorm": "^0.2.25"
   }
 }
